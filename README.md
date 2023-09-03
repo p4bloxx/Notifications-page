@@ -40,8 +40,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/notifications-page-responsive-html-css-js-HGb5w22l0V](https://www.frontendmentor.io/solutions/notifications-page-responsive-html-css-js-HGb5w22l0V)
+- Live Site URL: [https://p4bloxx.github.io/Notifications-page/](https://p4bloxx.github.io/Notifications-page/)
 
 ## My process
 
