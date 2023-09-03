@@ -1,0 +1,267 @@
+@import "variables";
+@import url('../assets/fonts/PlusJakartaSans-VariableFont_wght.ttf');
+@import url('../assets/fonts/static/PlusJakartaSans-ExtraBold.ttf');
+@import url('../assets/fonts/static/PlusJakartaSans-Medium.ttf');
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  /* max-width: 100%; */
+  border: none;
+  outline: none;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*COMPONENTS*/
+body{
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
+  background-color: $white;
+
+    @media screen and (min-width: 48rem) {
+      background-color: $snow;
+    }
+
+    @media screen and (min-width: 81.6rem) {
+      display: grid;
+      place-content: center;
+   }
+}
+
+.container{
+  padding: 1.5rem 1rem 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+
+   @media screen and (min-width: 48rem) {
+    padding: 2rem 1.5rem 2rem 1.5rem;
+    background-color: $white;
+    border-radius: 1rem;
+    margin: 2rem 1.25rem;
+    gap: 2rem;
+   }
+
+   @media screen and (min-width: 81.6rem) {
+      padding: 2rem 2rem 0 2rem;
+      margin-block: 3.93rem 5.65rem;
+      max-width: 45.625rem;
+   }
+
+    .status-bar{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      align-self: stretch;
+
+      .notifications{
+        font-weight: 800;
+        font-size: $fs-20;
+        color: $v-dark-grey-blue;
+        position: relative;
+
+        @media screen and (min-width: 48rem) {
+          font-size: $fs-24;
+         }
+        
+          #counter{
+            display: inline-grid;
+            place-content: center;
+            margin-inline-start: 0.56rem;
+            /* padding: 0.20rem 0.68rem 0.20rem 0.68rem; */
+            width: 2rem;
+            height: 1.5rem;
+            background-color: $new-content;
+            color: $white;
+            border-radius:  6px;
+            font-size: $fs-16;
+            position: absolute;
+            bottom: 0.1rem;
+            transition: all 0.2s linear;
+          }
+      }
+
+      .marker{
+        font-size: $fs-14;
+        color: $dark-grey-blue;
+        cursor: pointer;
+        transition: color 0.2s linear;
+
+         &:hover{
+          color: $new-content;
+         }
+
+         @media screen and (min-width: 48rem) {
+          font-size: $fs-16;
+         }
+      }
+    }
+
+    .notifications-container{
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      gap: 0.62rem;
+
+        .new{
+          background-color: $snow;
+        }
+
+        .link{
+          color: $new-content;
+          cursor: pointer;
+        }
+      
+        .card{
+          font-size:$fs-14;
+          color: $dark-grey-blue;
+          font-weight: $fw-mdm;
+          display: flex;
+          justify-content: start;
+          align-items: start;
+          gap: 0.81rem;
+          padding: 1rem;
+          border-radius: 8px;
+          position: relative;
+          transition: background-color 0.2s linear;
+
+          @media screen and (min-width: 48rem) {
+            font-size: $fs-16;
+          }
+
+            .img-user{
+              width: 2.5rem;
+              cursor: pointer;
+        
+              @media screen and (min-width: 48rem) {
+                width: 2.81rem;
+              }
+            }
+
+            .name-user{
+              font-size: $fs-14;
+              font-weight: 800;
+              color: $v-dark-grey-blue;
+              margin-inline-end: 0.37rem;
+              cursor: pointer;
+
+                @media screen and (min-width: 81.6rem) {
+                  font-size: $fs-16;
+              }
+            }
+            
+            .content{
+              font-weight: $fw-bld;
+              margin-inline-start: 0.375em;
+              transition: color 0.2s linear;
+              cursor: pointer;
+
+                &:hover{
+                  color: $new-content;
+                }
+            }
+        
+            .dot{
+              width: 8px;
+              height: 8px;
+              display: inline-block;
+              background-color: $new-content-dot;
+              border-radius: 50%;
+              margin-inline-start: 0.37rem;
+              transition: opacity 0.2s linear;
+            }
+        
+            .notific-time{
+              color: $grey-blue;
+              margin-block-start: 0.18rem;
+            }
+
+          .message{
+            margin-block-start: 0.75rem;
+            padding: 1rem;
+            border:1px solid  $v-light-grey-blue;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s linear;
+            max-width: 35rem;
+
+              &:hover{
+                background-color: $light-grey-blue;
+              }
+          }
+
+          #img-commented{
+            width: 2.4375rem;
+            position: static;
+            cursor: pointer;
+            margin-block-start: 0.1rem;
+
+              @media screen and (min-width: 81.6rem) {
+                right: 2rem;
+                margin-inline-end: 1rem;
+            }
+          }
+        }
+     }
+     .notifications-container > .card:nth-child(5) >.content-card{
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+
+        @media screen and (max-width: 47.9rem) {
+          .notification{
+            max-width: 20ch;
+          }
+        }
+    }  
+  }
